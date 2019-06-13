@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  Button,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Button, Text, Layout } from 'react-native-ui-kitten';
 
 export const Home = (props) => {
 
@@ -13,11 +9,11 @@ export const Home = (props) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Use Dark Mode?</Text>
-      <Button style={styles.button} title='Yeah 🌚' onPress={onToggleTheme}/>
-      <Button style={styles.button} title='Nope 🌞' onPress={onToggleTheme}/>
-    </View>
+    <Layout style={styles.container}>
+      <Text>Use Dark Mode?</Text>
+      <Button onPress={onToggleTheme}>Yeah 🌚</Button>
+      <Button onPress={onToggleTheme}>Nope 🌞</Button>
+    </Layout>
   );
 };
 
@@ -26,12 +22,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-  },
-  text: {
-    color: '#000000',
-  },
-  button: {
-    color: '#000000',
   },
 });
