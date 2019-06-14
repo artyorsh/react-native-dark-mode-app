@@ -2,9 +2,29 @@ node_modules/**/*
 .expo/*
 npm-debug.*
 *.jks
+*.jks.bak
 *.p12
 *.key
 *.mobileprovision
-*.orig.*
-web-build/
-web-report/
+
+# osx
+.DS_Store
+
+# intellij
+.idea
+local.properties
+
+# node.js
+node_modules/
+npm-debug.log
+
+# docs
+docs/docs.json
+docs/output.json
+
+# config
+config/index.js
+
+.expo
+.expo-shared/
+dist
