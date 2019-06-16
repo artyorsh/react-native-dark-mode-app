@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { ApplicationProvider } from 'react-native-ui-kitten';
-import { mapping, light, dark } from '@eva-design/eva';
+import {
+  dark,
+  light,
+  mapping,
+} from '@eva-design/eva';
 import { Home } from './containers/home';
 
-const lightTheme = {
-  theme: light,
-  name: 'light',
-};
-
-const darkTheme = {
-  theme: dark,
-  name: 'dark',
+const themes = {
+  light,
+  dark,
 };
 
 export default App = () => {
-
-  const [currentTheme, setTheme] = useState(darkTheme);
+  const [theme, setTheme] = React.useState('light');
 
   const toggleTheme = () => {
-    const theme = currentTheme.name === 'light' ? darkTheme : lightTheme;
-
-    setTheme(theme);
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
   };
 
   return (
-    <ApplicationProvider mapping={mapping} theme={currentTheme.theme}>
+    <ApplicationProvider
+      mapping={mapping}
+      theme={themes[theme]}>
       <Home toggleTheme={toggleTheme}/>
     </ApplicationProvider>
   );
